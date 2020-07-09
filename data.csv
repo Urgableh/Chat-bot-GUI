@@ -1,0 +1,7 @@
+Scene,Source,Duration,Redemption,Command
+Example Scene 1,Example Source 3,15,FALSE,!ExampleRedemption1
+Example Scene 1,Example Source 1,25,TRUE,ExampleRedemption2
+Example Scene 1,Example Source 2,35,FALSE,!ExampleRedemption3
+Example Scene 2,Example Source 5,45,TRUE,ExampleRedemption4
+Example Scene 2,Example Source 4,55,FALSE,!ExampleRedemption5
+Example Scene 1,EOF,EOF,EOF,EOF

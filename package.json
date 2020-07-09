@@ -1,0 +1,22 @@
+{
+  "name": "chat-bot-gui",
+  "version": "1.0.0",
+  "description": "chat-bot-gui",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Urgableh/Chat-bot-GUI.git"
+  },
+  "author": "Urgableh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Urgableh/Chat-bot-GUI/issues"
+  },
+  "homepage": "https://github.com/Urgableh/Chat-bot-GUI#readme",
+  "devDependencies": {
+    "electron": "^9.1.0"
+  }
+}
