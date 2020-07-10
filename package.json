@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Urgableh/Chat-bot-GUI#readme",
   "devDependencies": {
-    "electron": "^9.1.0"
-  }
+    "electron": "^9.1.0",
+    "electron-packager": "^15.0.0"
+  },
+  "dependencies": {}
 }

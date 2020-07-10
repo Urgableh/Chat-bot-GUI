@@ -1,96 +1,43 @@
-const { app, BrowserWindow } = require('electron')
+// Modules to control application life and create native browser window
+const {app, BrowserWindow} = require('electron')
+const path = require('path')
 
 function createWindow () {
   // Create the browser window.
-  const win = new BrowserWindow({
-    width: 800,
+  const mainWindow = new BrowserWindow({
+    width: 1200,
     height: 600,
     webPreferences: {
-      nodeIntegration: true
+      preload: path.join(__dirname, 'preload.js')
     }
   })
 
   // and load the index.html of the app.
-  win.loadFile('index.html')
+  mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  //win.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.whenReady().then(createWindow)
+app.whenReady().then(() => {
+  createWindow()
+  
+  app.on('activate', function () {
+    // On macOS it's common to re-create a window in the app when the
+    // dock icon is clicked and there are no other windows open.
+    if (BrowserWindow.getAllWindows().length === 0) createWindow()
+  })
+})
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
-})
-
-app.on('activate', () => {
-  // On macOS it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
-  if (BrowserWindow.getAllWindows().length === 0) {
-    createWindow()
-  }
+app.on('window-all-closed', function () {
+  if (process.platform !== 'darwin') app.quit()
 })
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-
-function openCity(evt, cityName) {
-  // Declare all variables
-  var i, tabcontent, tablinks;
-
-  // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
-  // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-
-function loadFile(o)
-{
-    var fr = new FileReader();
-    fr.onload = function(e)
-        {
-            showDataFile(e, o);
-        };
-    fr.readAsText(o.files[0]);
-}
-
-function showDataFile(e, o)
-{ 
-  var getCSVData = e.target.result;
-  var rows = getCSVData.split("\n");
-  var html = '<table border="1">';
-  rows.forEach((data, index) => {
-    html += "<tr>";
-    var value = data.split(",");
-
-    html += "<td>" + value[0] + "</td>";
-    html += "<td>" + value[1] + "</td>";
-    html += "<td>" + value[2] + "</td>";
-    html += "<td>" + value[3] + "</td>";
-    html += "<td>" + value[4] + "</td>";
-
-    html += "</tr>";
-  });
-  html += '</table>';
-  document.getElementById("data").innerHTML = html;
-  document.getElementById("data").style.color="blue";
-}
