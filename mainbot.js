@@ -63,4 +63,7 @@ function startStop(){
   document.getElementById("loop").value = loop ? "STOP" : "START";
   // then we need to call your function, because we want to restart the loop or stop it after clicking
   console.log(loop);
+  if (loop == true) {
+    twitchBot(); // wrapped entirety of mainbot_from_Twitchbot.js into function twitchBot()
+  }
 }
