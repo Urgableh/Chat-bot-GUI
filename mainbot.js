@@ -1,6 +1,7 @@
 var fs = require('fs');
 
-function openCity(evt, cityName) {
+// Responsible for showing content for each tab
+function openTab(evt, tabName) {
   // Declare all variables
   var i, tabcontent, tablinks;
 
@@ -17,33 +18,34 @@ function openCity(evt, cityName) {
   }
 
   // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(cityName).style.display = "block";
+  document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
 
-function loadFile()
+// Loads the file
+function loadFile(csv)
 {
-  var text1 = fs.readFileSync('data.csv','utf8'); 
-  showDataFile(text1, "data");
-  
+  var text1 = fs.readFileSync(csv + '.csv','utf8'); 
+  var allTextLines = text1.split(/\r\n|\n/); // Splits lines by rows
+  var headers = allTextLines[0].split(','); // Splits the first row by commas as header
+  var columns = headers.length;
+  showDataFile(text1, csv, columns);
 }
 
-function showDataFile(text, id)
+// Processes the file loaded
+function showDataFile(text, id, columns)
 { 
   var getCSVData = text;
-  console.log(getCSVData);
+  //console.log(getCSVData);
   var rows = getCSVData.split("\n");
   var html = '<table border="1">';
   rows.forEach((data, index) => {
     html += "<tr>";
     var value = data.split(",");
 
-    html += "<td>" + value[0] + "</td>";
-    html += "<td>" + value[1] + "</td>";
-    html += "<td>" + value[2] + "</td>";
-    html += "<td>" + value[3] + "</td>";
-    html += "<td>" + value[4] + "</td>";
-
+    for (i=0; i< columns; i++) {
+      html += "<td>" + value[i] + "</td>";
+    }
     html += "</tr>";
   });
   html += '</table>';
