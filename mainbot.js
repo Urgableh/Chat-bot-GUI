@@ -1,3 +1,5 @@
+var fs = require('fs');
+
 function openCity(evt, cityName) {
   // Declare all variables
   var i, tabcontent, tablinks;
@@ -19,19 +21,16 @@ function openCity(evt, cityName) {
   evt.currentTarget.className += " active";
 }
 
-function loadFile(o)
+function loadFile()
 {
-    var fr = new FileReader();
-    fr.onload = function(e)
-        {
-            showDataFile(e, o);
-        };
-    fr.readAsText(o.files[0]);
+  var text1 = fs.readFileSync('data.csv','utf8'); 
+  showDataFile(text1, "data");
+  
 }
 
-function showDataFile(e, o)
+function showDataFile(text, id)
 { 
-  var getCSVData = e.target.result;
+  var getCSVData = text;
   console.log(getCSVData);
   var rows = getCSVData.split("\n");
   var html = '<table border="1">';
@@ -48,18 +47,6 @@ function showDataFile(e, o)
     html += "</tr>";
   });
   html += '</table>';
-  document.getElementById("data").innerHTML = html;
-  document.getElementById("data").style.color="blue";
+  document.getElementById(`${id}`).innerHTML = html;
+  document.getElementById(`${id}`).style.color="blue";
 }
-
-/*
-In the terminal, you are running the node application and it is running your script. That is a very different execution environment than directly running your script in the browser. While the Javascript language is largely the same (both V8 if you're running the Chrome browser), the rest of the execution environment such as libraries available are not the same.
-
-node.js is a server-side Javascript execution environment that combines the V8 Javascript engine with a bunch of server-side libraries. require() is one such feature that node.js adds to the environment. So, when you run node in the terminal, you are running an environment that contains require().
-
-require() is not a feature that is built into the browser. That is a specific feature of node.js, not of a browser. So, when you try to have the browser run your script, it does not have require().
-
-There are ways to run some forms of node.js code in a browser (but not all). For example, you can get browser substitutes for require() that work similarly (though not identically).
-
-But, you won't be running a web server in your browser as that is not something the browser has the capability to do.
-*/
