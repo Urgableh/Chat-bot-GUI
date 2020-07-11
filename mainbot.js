@@ -52,3 +52,15 @@ function showDataFile(text, id, columns)
   document.getElementById(`${id}`).innerHTML = html;
   document.getElementById(`${id}`).style.color="blue";
 }
+
+var loop = false; // for chatbot start/stop
+
+function startStop(){
+  // Below is shorthand to invert the value of the loop variable from true to false.
+  loop = !loop;
+  // I guess we're also like to change the text on the loop button to say start or stop
+  // below we are using shorthand for if(loop === true) print "STOP" else print "START"
+  document.getElementById("loop").value = loop ? "STOP" : "START";
+  // then we need to call your function, because we want to restart the loop or stop it after clicking
+  console.log(loop);
+}
