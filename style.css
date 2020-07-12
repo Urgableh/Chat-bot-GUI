@@ -1,3 +1,28 @@
+@font-face {
+  font-family: "Aldrich";
+  src: url("./fonts/Aldrich-Regular.ttf");
+}
+
+.aldrich {
+  font-family: "Aldrich";
+}
+
+@font-face {
+  font-family: "Gravity";
+  src: url("./fonts/Gravity-Light.ttf");
+}
+
+.gravity {
+  font-family: "Gravity";
+  font-size: 12px;
+}
+.gravity14 {
+  font-family: "Gravity";
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+
 table {
   border-collapse: collapse;
 }
@@ -10,6 +35,8 @@ body {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #225599;
+    font-family: "Gravity";
+    font-weight: bolder;
   }
   
   /* Style the buttons that are used to open the tab content */

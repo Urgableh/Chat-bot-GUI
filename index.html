@@ -2,18 +2,19 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Twitch Channel Point Reward Redemption Chatbot</title>
     <link rel="stylesheet" href="./style.css">
+    <title>Twitch Channel Point Reward Redemption Chatbot</title>
     <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
   </head>
   <body>
-    <h1>Twitch Channel Point Reward Redemption Chatbot</h1>
-    Node.js application developed by the pleb Urgableh.
+    <h1 class="aldrich">Twitch Channel Point Reward Redemption Chatbot</h1>
+    <b class="gravity">Node.js application developed by the pleb Urgableh.
     <br>We are using Node.js <span id="node-version"></span>,
     Chromium <span id="chrome-version"></span>,
     and Electron <span id="electron-version"></span>.
     <br><br>
+    </b>
   </body>
   
     <!-- Tab links -->
@@ -26,23 +27,20 @@
 
   <!-- Tab content -->
   <div id="Console" class="tabcontent">
-    <h3>Console</h3>
-    <p>Console log whilst running the program.</p>
+    <p class="gravity14">Console log whilst running the program.</p>
     <script src="./mainbot.js"></script>
     <script src="./mainbot_from_Twitchbot.js"></script>
-    <input type="button" name="loop" id="loop" value="START" onclick="startStop()" />
+    <input type="button" class="aldrich" name="loop" id="loop" value="START" onclick="startStop()" />
   </div>
 
   <div id="OBS Data" class="tabcontent">
-    <h3>OBS Data</h3>
-    <p>Data used for OBS-Twitch linkages and communication.</p>
+    <p class="gravity14">Data used for OBS-Twitch linkages and communication.</p>
     <pre id="data"></pre>
     <script>loadFile('data')</script>
   </div>
 
   <div id="Credentials" class="tabcontent">
-    <h3>Credentials</h3>
-    <p>Credentials from Twitch for the channel and chatbot.</p>
+    <p class="gravity14">Credentials from Twitch for the channel and chatbot.</p>
     <pre id="credentials"></pre>
     <script>loadFile('credentials')</script>
   </div>
