@@ -38,7 +38,7 @@ function showDataFile(text, id, columns)
   var getCSVData = text;
   //console.log(getCSVData);
   var rows = getCSVData.split("\n");
-  var html = '<table border="1">';
+  var html = '<table border="1" width="100%">';
   rows.forEach((data, index) => {
     html += "<tr>";
     var value = data.split(",");
@@ -51,6 +51,7 @@ function showDataFile(text, id, columns)
   html += '</table>';
   document.getElementById(`${id}`).innerHTML = html;
   document.getElementById(`${id}`).style.color="white";
+  document.getElementById(`${id}`).style.tableLayout="fixed";
 }
 
 var loop = false; // for chatbot start/stop
