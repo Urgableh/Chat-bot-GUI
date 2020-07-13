@@ -44,7 +44,12 @@ function showDataFile(text, id, columns)
     var value = data.split(",");
 
     for (i=0; i< columns; i++) {
-      html += "<td contenteditable='true'>" + value[i] + "</td>";
+      if (index == 0) {
+        html += "<td style='text-align:center;'>" + value[i] + "</td>";
+      }
+      else {
+        html += "<td contenteditable='true'>" + value[i] + "</td>";
+      }
     }
     html += "</tr>";
   });
