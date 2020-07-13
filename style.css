@@ -13,18 +13,19 @@ img {
 }
 
 @font-face {
-  font-family: "Gravity";
-  src: url("./fonts/Gravity-Light.ttf");
+  font-family: "YellowPeas";
+  src: url("./fonts/YellowPeas-Regular.otf");
 }
 
-.gravity {
-  font-family: "Gravity";
-  font-size: 13px;
-}
-.gravity14 {
-  font-family: "Gravity";
+.yellowPeasSub {
+  font-family: "YellowPeas";
   font-size: 15px;
-  font-weight: bolder;
+  font-weight: lighter;
+}
+.yellowPeas {
+  font-family: "YellowPeas";
+  font-size: 20px;
+
 }
 
 
@@ -41,12 +42,16 @@ body {
 h1 {
   background-color: rgb(55, 55, 55);
   border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .tab {
     overflow: hidden;
     border: 1px solid #ccc;
-    background-color: #225599;
+    background-color: #462299;
     font-family: "Gravity";
     font-weight: bolder;
   }
@@ -54,6 +59,8 @@ h1 {
   /* Style the buttons that are used to open the tab content */
   .tab button {
     background-color: inherit;
+    font-family: "YellowPeas";
+    font-size: 18px;
     float: left;
     border: none;
     outline: none;
