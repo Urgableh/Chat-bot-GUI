@@ -38,6 +38,8 @@ img {
 
 table {
   border-collapse: collapse;
+  table-layout: fixed;
+  white-space:normal;
 }
 
 body {

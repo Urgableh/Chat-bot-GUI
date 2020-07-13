@@ -44,14 +44,14 @@ function showDataFile(text, id, columns)
     var value = data.split(",");
 
     for (i=0; i< columns; i++) {
-      html += "<td>" + value[i] + "</td>";
+      html += "<td contenteditable='true'>" + value[i] + "</td>";
     }
     html += "</tr>";
   });
   html += '</table>';
   document.getElementById(`${id}`).innerHTML = html;
   document.getElementById(`${id}`).style.color="white";
-  document.getElementById(`${id}`).style.tableLayout="fixed";
+  document.getElementById(`${id}`).style.tableLayout="auto";
 }
 
 // Access the entire console.log history in messages
@@ -84,7 +84,7 @@ function startStop()
 function hiddenf()
 {
   hide = !hide;
-  console.log(hide);
+  //console.log(hide);
   document.getElementById("hide").value = hide ? "Unhide" : "Hide";
   if (hide == false) {
     document.getElementById('credentials').style.color = "#ccc";
