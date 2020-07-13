@@ -56,7 +56,8 @@ function showDataFile(text, id, columns)
 
 var loop = false; // for chatbot start/stop
 
-function startStop(){
+function startStop()
+{
   // Below is shorthand to invert the value of the loop variable from true to false.
   loop = !loop;
   // I guess we're also like to change the text on the loop button to say start or stop
@@ -67,4 +68,11 @@ function startStop(){
   if (loop == true) {
     twitchBot(); // wrapped entirety of mainbot_from_Twitchbot.js into function twitchBot()
   }
+}
+
+function add()
+{
+  var current = document.getElementById("logger").innerHTML;
+  document.getElementById("logger").innerHTML = current + "<br>Hi";
+  document.getElementById("logger").scrollTop = document.getElementById("logger").scrollHeight;
 }

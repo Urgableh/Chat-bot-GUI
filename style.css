@@ -28,11 +28,17 @@ img {
 
 }
 
+.log {
+  width:100%;
+  overflow:auto;
+  min-height:100px;
+  max-height:100px;
+  background-color: rgb(10, 10, 10);
+}
 
 table {
   border-collapse: collapse;
 }
-
 
 body {
   background-color: rgb(37, 37, 37);
