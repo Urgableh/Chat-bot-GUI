@@ -50,7 +50,7 @@ function showDataFile(text, id, columns)
   });
   html += '</table>';
   document.getElementById(`${id}`).innerHTML = html;
-  document.getElementById(`${id}`).style.color="blue";
+  document.getElementById(`${id}`).style.color="white";
 }
 
 var loop = false; // for chatbot start/stop

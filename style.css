@@ -1,3 +1,8 @@
+img {
+  width: 55px;
+  height: 25.4px;
+}
+
 @font-face {
   font-family: "Aldrich";
   src: url("./fonts/Aldrich-Regular.ttf");
@@ -14,11 +19,11 @@
 
 .gravity {
   font-family: "Gravity";
-  font-size: 12px;
+  font-size: 13px;
 }
 .gravity14 {
   font-family: "Gravity";
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bolder;
 }
 
@@ -27,8 +32,15 @@ table {
   border-collapse: collapse;
 }
 
+
 body {
-  background-color: powderblue;
+  background-color: rgb(37, 37, 37);
+  color: white;
+}
+
+h1 {
+  background-color: rgb(55, 55, 55);
+  border-radius: 10px;
 }
 
 .tab {
@@ -66,4 +78,5 @@ body {
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+    color: whitesmoke;
   }
