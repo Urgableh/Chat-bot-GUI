@@ -104,5 +104,18 @@ function hiddenf()
 // Overwrite csv files
 function save(csv)
 {
-
+  document.getElementById('saveMessage').style.color = "#ccc";
+  document.getElementById('saveMessage').style.opacity = "1";
+  function fade(element) {
+    var op = 1;  // initial opacity
+    var timer = setInterval(function () {
+        if (op <= 0.001){
+            clearInterval(timer);
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.5;
+    }, 50);
+}
+  fade(document.getElementById('saveMessage'));
 }
