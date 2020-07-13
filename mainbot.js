@@ -54,6 +54,7 @@ function showDataFile(text, id, columns)
   document.getElementById(`${id}`).style.tableLayout="fixed";
 }
 
+// Access the entire console.log history in messages
 var messages = [];
 console.log = function(msg) {
     messages.push(msg);
@@ -62,9 +63,8 @@ console.log = function(msg) {
     document.getElementById("logger").scrollTop = document.getElementById("logger").scrollHeight;  
 }
 
-// Access the entire console.log history in messages
-
 var loop = false; // for chatbot start/stop
+var hide = true;
 
 function startStop()
 {
@@ -77,5 +77,21 @@ function startStop()
   // console.log(loop);
   if (loop == true) {
     twitchBot(); // wrapped entirety of mainbot_from_Twitchbot.js into function twitchBot()
+    document.getElementById("loop").style.display='none';
+  }
+}
+
+function hiddenf()
+{
+  hide = !hide;
+  console.log(hide);
+  document.getElementById("hide").value = hide ? "Unhide" : "Hide";
+  if (hide == false) {
+    document.getElementById('credentials').style.color = "#ccc";
+    document.getElementById('credentials').style.textShadow = "none";
+  }
+  if (hide == true) {
+    document.getElementById('credentials').style.color = "transparent";
+    document.getElementById('credentials').style.textShadow = "0 0 6px white";
   }
 }

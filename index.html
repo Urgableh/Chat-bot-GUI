@@ -42,6 +42,7 @@
 
   <div id="Credentials" class="tabcontent">
     <p class="yellowPeas">Credentials from Twitch for the channel and chatbot.</p>
+    <input type="button" class="yellowPeas" name="hide" id="hide" value="Unhide" onclick="hiddenf()"/>
     <pre id="credentials"></pre>
     <script>loadFile('credentials')</script>
   </div>
@@ -50,4 +51,8 @@
 <script>
   // Get the element with id="defaultOpen" and click on it
   document.getElementById("defaultOpen").click();
+  // Blur the credentials at start up
+  document.getElementById('credentials').style.color = "transparent";
+  document.getElementById('credentials').style.textShadow = "0 0 6px white";
 </script>
+
