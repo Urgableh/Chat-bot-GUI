@@ -54,6 +54,16 @@ function showDataFile(text, id, columns)
   document.getElementById(`${id}`).style.tableLayout="fixed";
 }
 
+var messages = [];
+console.log = function(msg) {
+    messages.push(msg);
+    var current = document.getElementById("logger").innerHTML;
+    document.getElementById("logger").innerHTML = current + "<br>" + msg;
+    document.getElementById("logger").scrollTop = document.getElementById("logger").scrollHeight;  
+}
+
+// Access the entire console.log history in messages
+
 var loop = false; // for chatbot start/stop
 
 function startStop()
@@ -64,15 +74,8 @@ function startStop()
   // below we are using shorthand for if(loop === true) print "STOP" else print "START"
   document.getElementById("loop").value = loop ? "STOP" : "START";
   // then we need to call your function, because we want to restart the loop or stop it after clicking
-  console.log(loop);
+  // console.log(loop);
   if (loop == true) {
     twitchBot(); // wrapped entirety of mainbot_from_Twitchbot.js into function twitchBot()
   }
-}
-
-function add()
-{
-  var current = document.getElementById("logger").innerHTML;
-  document.getElementById("logger").innerHTML = current + "<br>Hi";
-  document.getElementById("logger").scrollTop = document.getElementById("logger").scrollHeight;
 }
