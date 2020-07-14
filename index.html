@@ -38,8 +38,7 @@
     <p class="yellowPeas">Data used for OBS-Twitch linkages and communication.</p>
     <pre id="data"></pre>
     <script>loadFile('data')</script>
-    <div style="transform: translateX(75%);">
-      <p id="saveMessage">Saved.</p>
+    <div style="transform: translateX(85%);">
       <input type="button" class="aldrich" name="saveData" id="saveData" value="Save" onclick="save('data')" />
     </div>
   </div>
@@ -58,8 +57,5 @@
   // Blur the credentials at start up
   document.getElementById('credentials').style.color = "transparent";
   document.getElementById('credentials').style.textShadow = "0 0 6px white";
-  // Hide saved message until it is pressed
-  document.getElementById('saveMessage').style.color = "#ccc";
-  document.getElementById('saveMessage').style.opacity = "0";
 </script>
 
