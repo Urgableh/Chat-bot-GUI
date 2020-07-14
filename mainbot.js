@@ -99,4 +99,12 @@ function hiddenf()
     document.getElementById('credentials').style.color = "transparent";
     document.getElementById('credentials').style.textShadow = "0 0 6px white";
   }
+// Overwrite csv files
+function save(csv)
+{
+  var str = document.getElementById(`${csv}`).innerText;
+  str = str.replace(/	/g, ",");
+  fs.writeFileSync(`./${csv}.csv`, str);
+}
+
 }
