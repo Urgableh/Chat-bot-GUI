@@ -109,10 +109,10 @@ function save(csv)
   var str = document.getElementById(`${csv}`).innerText;
   str = str.replace(/	/g, ",");
   fs.writeFileSync(`./${csv}.csv`, str);
-  fadeout("saved");
-  document.getElementById('saveData').disabled = true;
+  fadeout(`${csv}SaveMessage`);
+  document.getElementById(`${csv}Save`).disabled = true;
   setTimeout(function() {
-    document.getElementById('saveData').disabled = false
+    document.getElementById(`${csv}Save`).disabled = false
   }, 2300);
 }
 

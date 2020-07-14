@@ -40,8 +40,8 @@
     <script>loadFile('data')</script>
     <input type="button" class="aldrich" name="newRow" id="newRow" value="Add new row" onclick="newRow()" />
     <input type="button" class="aldrich" name="deleteRow" id="deleteRow" value="Delete first row" onclick="deleteRow()" />
-    <input type="button" class="aldrich" name="saveData" id="saveData" value="Save" onclick="save('data')" />
-    <label for="Save" id="saved">Saved.</label>
+    <input type="button" class="aldrich" name="dataSave" id="dataSave" value="Save" onclick="save('data')" />
+    <label for="Save" id="dataSaveMessage">Saved.</label>
     
   </div>
 
@@ -51,6 +51,8 @@
     </p>
     <pre id="credentials"></pre>
     <script>loadFile('credentials')</script>
+    <input type="button" class="aldrich" name="credentialsSave" id="credentialsSave" value="Save" onclick="save('credentials')" />
+    <label for="Save" id="credentialsSaveMessage">Saved.</label>
   </div>
 </html>
 
@@ -61,6 +63,7 @@
   document.getElementById('credentials').style.color = "transparent";
   document.getElementById('credentials').style.textShadow = "0 0 6px white";
   // Initially invisible saved message
-  document.getElementById('saved').style.opacity = "0";
+  document.getElementById('dataSaveMessage').style.opacity = "0";
+  document.getElementById('credentialsSaveMessage').style.opacity = "0";
 </script>
 
