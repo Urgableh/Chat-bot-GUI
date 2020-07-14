@@ -100,9 +100,3 @@ function hiddenf()
     document.getElementById('credentials').style.textShadow = "0 0 6px white";
   }
 }
-
-// Overwrite csv files
-function save(csv)
-{
-
-}
