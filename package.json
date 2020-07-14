@@ -1,7 +1,7 @@
 {
-  "name": "chat-bot-gui",
+  "name": "twitch-bot-gui",
   "version": "1.0.0",
-  "description": "chat-bot-gui",
+  "description": "twitch-bot-gui",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
