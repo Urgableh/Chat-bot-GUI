@@ -32,6 +32,7 @@
     <script src="./mainbot_from_Twitchbot.js"></script>
     <pre name="logger" id="logger" class="log"></pre>
     <input type="button" class="aldrich" name="loop" id="loop" value="START" onclick="startStop()" />
+    <p class="yellowPeasSubSub" id="caution">*Changes to OBS Data / Credentials will no longer influence the program. Close and reopen this program to refresh.</p>
   </div>
 
   <div id="OBS Data" class="tabcontent">
@@ -65,5 +66,7 @@
   // Initially invisible saved message
   document.getElementById('dataSaveMessage').style.opacity = "0";
   document.getElementById('credentialsSaveMessage').style.opacity = "0";
+  // Show caution after program is started
+  document.getElementById('caution').style.display = 'none';
 </script>
 

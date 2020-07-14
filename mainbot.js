@@ -77,6 +77,7 @@ function startStop()
 {
   // Below is shorthand to invert the value of the loop variable from true to false.
   loop = !loop;
+  document.getElementById('caution').style.display = 'inline';
   // I guess we're also like to change the text on the loop button to say start or stop
   // below we are using shorthand for if(loop === true) print "STOP" else print "START"
   document.getElementById("loop").value = loop ? "STOP" : "START";

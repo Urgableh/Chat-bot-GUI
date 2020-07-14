@@ -17,6 +17,12 @@ img {
   src: url("./fonts/YellowPeas-Regular.otf");
 }
 
+.yellowPeasSubSub {
+  font-family: "YellowPeas";
+  font-size: 12px;
+  font-weight: lighter;
+  color: rgb(158, 158, 158);
+}
 .yellowPeasSub {
   font-family: "YellowPeas";
   font-size: 15px;
@@ -25,7 +31,6 @@ img {
 .yellowPeas {
   font-family: "YellowPeas";
   font-size: 20px;
-
 }
 
 .log {
@@ -34,8 +39,8 @@ img {
   overflow:auto;
   white-space:normal;
   word-wrap: break-word;
-  min-height:150px;
-  max-height:150px;
+  min-height:175px;
+  max-height:175px;
   background-color: rgb(10, 10, 10);
 }
 
