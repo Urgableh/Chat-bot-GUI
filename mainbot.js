@@ -36,9 +36,10 @@ function loadFile(csv)
 function showDataFile(text, id, columns)
 { 
   var getCSVData = text;
+  var tableId = id + "Table";
   //console.log(getCSVData);
   var rows = getCSVData.split("\n");
-  var html = '<table border="1" width="100%">';
+  var html = `<table border="1" width="100%" id="${tableId}">`;
   rows.forEach((data, index) => {
     html += "<tr>";
     var value = data.split(",");
@@ -60,6 +61,7 @@ function showDataFile(text, id, columns)
 }
 
 // Access the entire console.log history in messages
+
 var messages = [];
 console.log = function(msg) {
     messages.push(msg);
@@ -99,6 +101,8 @@ function hiddenf()
     document.getElementById('credentials').style.color = "transparent";
     document.getElementById('credentials').style.textShadow = "0 0 6px white";
   }
+}
+
 // Overwrite csv files
 function save(csv)
 {
@@ -107,4 +111,21 @@ function save(csv)
   fs.writeFileSync(`./${csv}.csv`, str);
 }
 
+// Add new row to table
+function newRow()
+{
+  var text1 = fs.readFileSync('data.csv','utf8'); 
+  var allTextLines = text1.split(/\r\n|\n/); // Splits lines by rows
+  var columns = allTextLines[0].split(',').length;
+  var row = document.getElementById('dataTable').insertRow(1);
+  for (i=0;i<columns;i++) {
+    var temp = row.insertCell(i);
+    temp.outerHTML = "<td contenteditable='true'>value</td>";
+  }
+}
+
+// Delete top row
+function deleteRow()
+{
+  document.getElementById('dataTable').deleteRow(1);
 }
