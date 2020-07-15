@@ -29,7 +29,11 @@
     <script src="./mainbot.js"></script>
     <script src="./mainbot_from_Twitchbot.js"></script>
     <pre name="logger" id="logger" class="log"></pre>
-    <input type="button" class="aldrich" name="loop" id="loop" value="START" onclick="startStop()" />
+    <p style="text-align:right;">
+      <input style="float:left;" type="button" class="aldrich" name="loop" id="loop" value="START" onclick="startStop()" />
+      <label id="checkboxMessage" class="yellowPeasSub">Enable chatbot messages in channel:</label>
+      <input type="checkbox" class="aldrich" id="chatbot" />
+    </p>
     <p class="yellowPeasSubSub" id="caution">*Changes to OBS Data / Credentials will no longer influence the program. Close and reopen this program to refresh.</p>
   </div>
 
@@ -37,7 +41,7 @@
     <p class="yellowPeas">Data used for OBS-Twitch linkages and communication.</p>
     <pre id="data"></pre>
     <script>loadFile('data')</script>
-    <input type="button" class="aldrich" name="newRow" id="newRow" value="Add new row" onclick="newRow()" />
+    <input type="button" class="aldrich" name="newRow" id="newRow" value="Insert new row" onclick="newRow()" />
     <input type="button" class="aldrich" name="deleteRow" id="deleteRow" value="Delete first row" onclick="deleteRow()" />
     <input type="button" class="aldrich" name="dataSave" id="dataSave" value="Save" onclick="save('data')" />
     <label for="Save" id="dataSaveMessage">Saved.</label>

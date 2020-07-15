@@ -84,8 +84,15 @@ function startStop()
   // then we need to call your function, because we want to restart the loop or stop it after clicking
   // console.log(loop);
   if (loop == true) {
-    twitchBot(); // wrapped entirety of mainbot_from_Twitchbot.js into function twitchBot()
+    if (document.getElementById('chatbot').checked == true) {
+      twitchBot(true); // wrapped entirety of mainbot_from_Twitchbot.js into function twitchBot()
+    }
+    else {
+      twitchBot(false);
+    }
     document.getElementById("loop").style.display='none';
+    document.getElementById("checkboxMessage").style.display='none';
+    document.getElementById("chatbot").style.display='none';
   }
 }
 
