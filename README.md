@@ -8,3 +8,5 @@ Project specifications:
   - The credentials tab will be censored and can be revealed by a click
   - Start button will be on the default tab which will execute mainbot.js
   - GUI should be as aesthetic as possible
+
+Complete demo found at: https://youtu.be/TKkJI6xVHkw
